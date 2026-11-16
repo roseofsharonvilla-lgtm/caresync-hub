@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAREsync Hub | Rose of Sharon Senior Villa</title>
+<style>
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fbf7ec;font-family:Georgia,serif;color:#163f28}
+.load{text-align:center}
+.load b{display:block;font-size:26px;margin-bottom:8px}
+.load span{font-family:Arial,sans-serif;font-size:14px;color:#6b7069}
+</style>
+</head>
+<body>
+<div class="load"><b>CAREsync Hub</b><span>Loading your tools…</span></div>
+<script>
+fetch('https://script.google.com/macros/s/AKfycbwHpNlO4WYlzfs0pgHrx6sspMAMhr3zbWnrPlCRMUUgIOE10FnkL4zw5SAf2gz1DIeX/exec?format=json')
+  .then(function(r){return r.json();})
+  .then(function(d){document.open();document.write(d.html);document.close();})
+  .catch(function(){document.querySelector('.load span').textContent='Could not load the Hub. Please refresh the page.';});
+</script>
+</body>
+</html>
